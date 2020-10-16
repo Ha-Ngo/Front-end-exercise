@@ -1,0 +1,124 @@
+//Menu Button
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: white;
+    @include easeOut;
+  }
+
+  // Rotate into X with menu lines
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      //Line1 rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      //Line2 hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      //Line3 rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+//Menu overlay
+.menu-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba($primary-color, 1);
+  transform: translate3d(0, -100%, 0);
+  @include easeOut;
+
+  &.show {
+    visibility: visible;
+    //Slide in from top
+    transform: translate3d(0, 0, 0);
+  }
+
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.2rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  .menu-nav {
+    list-style: none;
+    margin: 1.5rem 0 0 0;
+
+    .nav-item {
+      transform: translate3d(600px, 0, 0);
+      @include easeOut;
+
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+
+    .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 3rem;
+      font-weight: 400;
+      @include easeOut;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  #potrait {
+    margin-top: 5rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 3px $secondary-color;
+  }
+}
+
+//Delay each nav item 0.1s
+@for $x from 1 through 5 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.2s;
+  }
+}
