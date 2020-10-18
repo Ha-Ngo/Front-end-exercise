@@ -61,6 +61,8 @@
 
   .icons {
     margin-top: 1rem;
+    text-align: center;
+
     a {
       padding: 0.2rem;
 
@@ -76,6 +78,7 @@
     margin: 1.5rem 0 0 0;
 
     .nav-item {
+      font-size: 2rem;
       transform: translate3d(600px, 0, 0);
       @include easeOut;
 
@@ -108,11 +111,17 @@
   }
 
   #potrait {
-    margin-top: 5rem;
+    margin-top: 4rem;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: solid 3px $secondary-color;
+  }
+  .menu-profile {
+    h1 {
+      color: $secondary-color;
+      font-size: 3rem;
+    }
   }
 }
 
