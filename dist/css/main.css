@@ -94,22 +94,6 @@
 .nav-item:nth-child(5) {
   transition-delay: 1s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  .menu-bar {
-    width: 100%; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
-  .menu-bar {
-    width: 100%; } }
-
 * {
   box-sizing: border-box; }
 
@@ -154,8 +138,124 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main#home {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.bio h1,
+.experience h1,
+.skills h1,
+.education h1 {
+  color: #eece1a; }
+
+.about-info,
+.ex {
+  display: grid;
+  grid-template-areas: "img bio bio";
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: img;
+  justify-self: center;
+  width: 200px;
+  height: 200px;
+  border: solid 3px #eece1a; }
+
+.bio {
+  grid-area: bio;
+  justify-self: center;
+  margin: auto; }
+
+.edu {
+  display: grid;
+  grid-template-areas: "edu1 edu2";
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px; }
+
+.ex {
+  display: grid;
+  grid-template-areas: "ex1 ex2 ex3";
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px; }
+
+.ex1 {
+  grid-area: ex1; }
+
+.ex2 {
+  grid-area: ex2; }
+
+.ex3 {
+  grid-area: ex3; }
+
+.ex1,
+.ex2,
+.ex3,
+.master,
+.bachelor {
+  justify-self: center;
+  background-color: #515151;
+  padding: 2rem;
+  border-bottom: solid 3px #eece1a;
+  width: 100%; }
+
+.ticket {
+  font-family: Arial;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative !important;
+  background-color: #eece1a;
+  float: left;
+  padding: 7px 5px;
+  margin: 0 5px 5px 0; }
+
+.about {
+  display: grid; }
+
+.bio-image {
+  border-radius: 50%;
+  margin: 1rem 1rem; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: white;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  .menu-bar {
+    width: 100%; }
+  .about-info {
+    grid-template-areas: "img" "bio" "bio";
+    grid-template-columns: 1fr; }
+  .edu {
+    grid-template-areas: "edu1" "edu2";
+    grid-template-columns: 1fr; }
+  .ex {
+    grid-template-areas: "ex1" "ex2" "ex3";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .menu-bar {
+    width: 100%; }
+  .about-info {
+    grid-template-areas: "img" "bio" "bio";
+    grid-template-columns: 1fr; }
+  .edu {
+    grid-template-areas: "edu1" "edu2";
+    grid-template-columns: 1fr; }
+  .ex {
+    grid-template-areas: "ex1" "ex2" "ex3";
+    grid-template-columns: 1fr; } }

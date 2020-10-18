@@ -1,6 +1,6 @@
 @import "config";
 @import "menu";
-@import "mobile";
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +8,7 @@
 body {
   @include background;
   background: $primary-color;
-  color: white;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -49,7 +49,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
 
   &#home {
     overflow: hidden;
@@ -58,3 +59,93 @@ main {
     }
   }
 }
+
+// About
+.bio,
+.experience,
+.skills,
+.education {
+  h1 {
+    color: $secondary-color;
+  }
+}
+.about-info,
+.ex {
+  display: grid;
+  grid-template-areas: "img bio bio";
+  grid-template-columns: repeat(3, 1fr);
+}
+.bio-image {
+  grid-area: img;
+  justify-self: center;
+  width: 200px;
+  height: 200px;
+  border: solid 3px $secondary-color;
+}
+.bio {
+  grid-area: bio;
+  justify-self: center;
+  margin: auto;
+}
+
+.edu {
+  display: grid;
+  grid-template-areas: "edu1 edu2";
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px;
+}
+.ex {
+  display: grid;
+  grid-template-areas: "ex1 ex2 ex3";
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px;
+}
+.ex1 {
+  grid-area: ex1;
+}
+.ex2 {
+  grid-area: ex2;
+}
+.ex3 {
+  grid-area: ex3;
+}
+.ex1,
+.ex2,
+.ex3,
+.master,
+.bachelor {
+  justify-self: center;
+  background-color: lighten($primary-color, 5);
+  padding: 2rem;
+  border-bottom: solid 3px $secondary-color;
+  width: 100%;
+}
+.ticket {
+  font-family: Arial;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative !important;
+  background-color: $secondary-color;
+  float: left;
+  padding: 7px 5px;
+  margin: 0 5px 5px 0;
+}
+.about {
+  display: grid;
+}
+.bio-image {
+  border-radius: 50%;
+  margin: 1rem 1rem;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
