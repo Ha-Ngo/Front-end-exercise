@@ -41,6 +41,14 @@
       "ex3";
     grid-template-columns: 1fr;
   }
+  .project-info {
+    grid-template-areas:
+      "item"
+      "item"
+      "item"
+      "item";
+    grid-template-columns: 1fr;
+  }
 }
 
 //Smartphone
@@ -70,6 +78,14 @@
       "ex1"
       "ex2"
       "ex3";
+    grid-template-columns: 1fr;
+  }
+  .project-info {
+    grid-template-areas:
+      "item"
+      "item"
+      "item"
+      "item";
     grid-template-columns: 1fr;
   }
 }

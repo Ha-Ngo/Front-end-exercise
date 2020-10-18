@@ -146,6 +146,57 @@ main {
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
   height: 60px;
+  text-align: left;
+}
+
+//Projects
+.project-info {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+img {
+  width: 100%;
+  height: auto;
+  border: solid 3px white;
+  &:hover {
+    opacity: 0.5;
+    border-color: $secondary-color;
+    @include easeOut;
+  }
+}
+//Button
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: black;
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: white;
+}
+//Contact
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap;
+  .btn-dark {
+    margin: 1rem;
+    padding: 2rem;
+    width: 50%;
+    @include easeOut;
+  }
 }
 
 @import "mobile";
