@@ -1,0 +1,295 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: white;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35%;
+  height: 100vh;
+  overflow: hidden;
+  background: #444444;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.5s ease-out; }
+  .menu-bar.show {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); }
+  .menu-bar .icons {
+    margin-top: 1rem;
+    text-align: center; }
+    .menu-bar .icons a {
+      padding: 0.2rem; }
+      .menu-bar .icons a:hover {
+        color: #eece1a;
+        transition: all 0.5s ease-out; }
+  .menu-bar .menu-nav {
+    list-style: none;
+    margin: 1.5rem 0 0 0; }
+    .menu-bar .menu-nav .nav-item {
+      font-size: 2rem;
+      transform: translate3d(600px, 0, 0);
+      transition: all 0.5s ease-out; }
+      .menu-bar .menu-nav .nav-item:hover {
+        color: #eece1a; }
+      .menu-bar .menu-nav .nav-item.show {
+        transform: translate3d(0, 0, 0); }
+      .menu-bar .menu-nav .nav-item.current > a {
+        color: #eece1a; }
+    .menu-bar .menu-nav .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 3rem;
+      font-weight: 400;
+      transition: all 0.5s ease-out; }
+      .menu-bar .menu-nav .nav-link:hover {
+        color: #eece1a; }
+  .menu-bar #potrait {
+    margin-top: 4rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 3px #eece1a; }
+  .menu-bar .menu-profile h1 {
+    color: #eece1a;
+    font-size: 3rem; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #444;
+  color: white;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/homeimg1.jpeg);
+    background-attachment: fixed;
+    background-size: cover; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 6rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    padding: 0.2rem 1rem;
+    background: rgba(70, 70, 70, 0.5); }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.text-secondary {
+  color: #eece1a; }
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px); }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
+
+.bio h1,
+.experience h1,
+.skills h1,
+.education h1 {
+  color: #eece1a; }
+
+.about-info,
+.ex {
+  display: grid;
+  grid-template-areas: "img bio bio";
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: img;
+  justify-self: center;
+  width: 200px;
+  height: 200px;
+  border: solid 3px #eece1a; }
+
+.bio {
+  grid-area: bio;
+  justify-self: center;
+  margin: auto; }
+
+.edu {
+  display: grid;
+  grid-template-areas: "edu1 edu2";
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px; }
+
+.ex {
+  display: grid;
+  grid-template-areas: "ex1 ex2 ex3";
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5rem;
+  column-gap: 10px; }
+
+.ex1 {
+  grid-area: ex1; }
+
+.ex2 {
+  grid-area: ex2; }
+
+.ex3 {
+  grid-area: ex3; }
+
+.ex1,
+.ex2,
+.ex3,
+.master,
+.bachelor {
+  justify-self: center;
+  background-color: #515151;
+  padding: 2rem;
+  border-bottom: solid 3px #eece1a;
+  width: 100%; }
+
+.ticket {
+  font-family: Arial;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative !important;
+  background-color: #eece1a;
+  float: left;
+  padding: 7px 5px;
+  margin: 0 5px 5px 0; }
+
+.about {
+  display: grid; }
+
+.bio-image {
+  border-radius: 50%;
+  margin: 1rem 1rem; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: white;
+  height: 60px;
+  text-align: left; }
+
+.project-info {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem; }
+
+img {
+  width: 100%;
+  height: auto;
+  border: solid 3px white; }
+  img:hover {
+    opacity: 0.5;
+    border-color: #eece1a;
+    transition: all 0.5s ease-out; }
+
+.btn, .btn-dark {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover {
+    background: #eece1a;
+    color: black; }
+
+.btn-dark {
+  background: black;
+  color: white; }
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap; }
+  .contact-info .btn-dark {
+    margin: 1rem;
+    padding: 2rem;
+    width: 50%;
+    transition: all 0.5s ease-out; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  .menu-bar {
+    width: 100%; }
+  .about-info {
+    grid-template-areas: "img" "bio" "bio";
+    grid-template-columns: 1fr; }
+  .edu {
+    grid-template-areas: "edu1" "edu2";
+    grid-template-columns: 1fr; }
+  .ex {
+    grid-template-areas: "ex1" "ex2" "ex3";
+    grid-template-columns: 1fr; }
+  .project-info {
+    grid-template-areas: "item" "item" "item" "item";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .menu-bar {
+    width: 100%; }
+  .about-info {
+    grid-template-areas: "img" "bio" "bio";
+    grid-template-columns: 1fr; }
+  .edu {
+    grid-template-areas: "edu1" "edu2";
+    grid-template-columns: 1fr; }
+  .ex {
+    grid-template-areas: "ex1" "ex2" "ex3";
+    grid-template-columns: 1fr; }
+  .project-info {
+    grid-template-areas: "item" "item" "item" "item";
+    grid-template-columns: 1fr; } }
